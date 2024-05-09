@@ -1,0 +1,53 @@
+﻿@model List<cart>;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Table Example</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Business Transaction List</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Cart ID</th>
+                    <th>Cart Name</th>
+                    <th>Cart Quantity</th>
+                    <th>Cart Price</th>
+                    <th>Cart Bill</th>
+                    <th>Cart Image</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var data in Model)
+                {
+                    <tr>
+                        <td>@data.cart_id</td>
+                        <td>@data.cart_name</td>
+                        <td>@data.cart_qty</td>
+                        <td>@data.cart_price</td>
+                        <td>@data.cart_bill</td>
+                        <td>
+                            <img src="@("~/medimages/"+Model[0].cart_img)" asp-append-version=true width="50px" height="50px">
+                        </td>
+                        <td>
+                          
+                            <a href="@Url.Action("deletecart","admin",new{id=data.cart_id})"><button type="button" class="btn btn-danger btn-sm">Delete</button></a>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

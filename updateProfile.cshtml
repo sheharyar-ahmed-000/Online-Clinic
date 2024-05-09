@@ -1,0 +1,39 @@
+﻿@model List<admin>;
+
+<h1 class="text-center fw-bold mb-3">PROFILE PAGE</h1>
+
+<div class="container">
+    <div class="row justify-content-center">
+       <div class="col-lg-5">
+            <form method="post" class="text-center " enctype="multipart/form-data" asp-action="imgupload">
+                <input type="hidden" value="@Model[0].admin_id" name="admin_id" />
+                <input type="hidden" value="@Model[0].admin_name" name="admin_name" />
+                <input type="hidden" value="@Model[0].admin_email" name="admin_email" />
+                <input type="hidden" value="@Model[0].admin_password" name=<a href="c:\users\dell\documents\startup20-4\eproject(online clinic management) (1)\eproject(online clinic management)\clinic\views\admin\updateprofile.cshtml">c:\users\dell\documents\startup20-4\eproject(online clinic management) (1)\eproject(online clinic management)\clinic\views\admin\updateprofile.cshtml</a>"admin_password" />
+
+                <img src="@("~/adminimages/"+Model[0].admin_image)" style="border-radius:100px; border:5px solid black;" asp-append-version=true width="200px" height="200px" /><br />
+                <input type="file" value="@Model[0].admin_image" class="form-control mt-3" name="admin_image" />
+                <input type="submit" class="mt-2 mb-2 btn btn-outline-dark" value="Upload Image" />
+            </form>
+           <form method="post">
+                <input type="hidden" class="form-control" value="@Model[0].admin_id" name="admin_id" />
+                     <div class="form-floating mb-3">
+                             <input type="text"   class="form-control" value="@Model[0].admin_name" name="admin_name" />
+                            <label for="">Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                            <input type="text"   class="form-control" value="@Model[0].admin_email" name="admin_email" />
+                            <label for="">Email Address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                            <input type="text"   class="form-control" value="@Model[0].admin_password" name="admin_password" />
+                            <label for="">Password</label>
+                   </div>
+                    <input type="hidden" class="form-control" value="@Model[0].admin_image" name="admin_image" />
+                    <input type="submit" class="btn btn-outline-dark w-100" value="Update Profile" />
+            </form>
+
+
+       </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+﻿@model educationevents;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap List Example</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Clients List</h1>
+        <div class="mb-3">
+            <img src="@("~/eventimage/"+Model.event_image)" asp-append-version=true width="200px" height="200px">
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item"><h4>Education Event ID: @Model.event_id</h4></li>
+            <li class="list-group-item"><h4>Education Event Name: @Model.event_name</h4></li>
+            <li class="list-group-item"><h4>Education Event Time: @Model.event_time</h4></li>
+            <li class="list-group-item"><h4>Education Event Date: @Model.event_date</h4></li>
+            <li class="list-group-item"><h4>Education Event Location: @Model.event_location</h4></li>
+            <li class="list-group-item"><h4>Education Event Teacher: @Model.event_teacher</h4></li>
+        </ul>
+        <div class="mt-3">
+            <a href="@Url.Action("addevent","admin")"> <button type="button" class="btn btn-success">Add Education Event</button></a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

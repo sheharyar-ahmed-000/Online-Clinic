@@ -1,0 +1,32 @@
+﻿@model scientifictools;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap List Example</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Scientific Tools List</h1>
+        <div class="mb-3">
+            <img src="@("~/scitoolsimage/"+Model.sci_image)" asp-append-version=true width="200px" height="200px">
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item"><h4>Scientific Tool ID: @Model.sci_id</h4></li>
+            <li class="list-group-item"><h4>Scientific Tool Name: @Model.sci_name</h4></li>
+            <li class="list-group-item"><h4>Scientific Tool Description is: @Model.sci_description</h4></li>
+            <li class="list-group-item"><h4>Scientific Tool Price: @Model.sci_price</h4></li>
+        </ul>
+        <div class="mt-3">
+            <a href="@Url.Action("addscitools","admin")"> <button type="button" class="btn btn-success">Add Scientific Tool</button></a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

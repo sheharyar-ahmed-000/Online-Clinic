@@ -1,0 +1,9 @@
+﻿@model List<medicinecategory>;
+
+    <select class="form-select" name="medicinecat_id">
+        <option hidden>Select Cateogry Of Medicine</option>
+        @foreach (var item in Model)
+        {
+            <option value="@item.medicinecat_id">@item.medicinecat_name</option>
+        }
+    </select>

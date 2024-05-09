@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Scientific Tools</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="mt-5 mb-4">Add Scientific Tools</h1>
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="Scientific tool Name" class="form-label">Scientific Tool Name</label>
+                <input type="text" class="form-control" name="two_name" placeholder="Enter your scientific tool name" required>
+            </div>
+            <div class="mb-3">
+                <label for="Scientific tool description" class="form-label">Scientific Tool Description</label>
+                <textarea class="form-control" name="two_des" rows="5"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="Scientific tool price" class="form-label">Scientific Tool Price</label>
+                <input type="number" class="form-control" name="two_price" placeholder="Enter your scientific tool price" required>
+            </div>
+            <div class="mb-3">
+                <label for="scientific tool image" class="form-label">Upload Scientific Tool Image</label>
+                <input type="file" class="form-control" name="two_img" placeholder="Upload your image" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

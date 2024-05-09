@@ -1,0 +1,48 @@
+﻿@model List<client>;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Table Example</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Clients List</h1>
+        <div class="mb-3">
+            <a href="@Url.Action("addclient","admin")"><button type="button" class="btn btn-success">Add Client</button></a>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Client ID</th>
+                    <th>Client Name</th>
+                    <th>Client Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+               @foreach (var data in Model)
+                {
+                    <tr>
+                        <td>@data.client_id</td>
+                        <td>@data.client_name</td>
+                        <td>@data.client_email</td>
+                        <td>
+                            <a href="@Url.Action("updateclient","admin",new{id=data.client_id})"><button type="button" class="btn btn-primary btn-sm">Update</button></a>
+                            <a href="@Url.Action("deleteclient","admin",new{id=data.client_id})"><button type="button" class="btn btn-danger btn-sm">Delete</button></a>
+                            <a href="@Url.Action("detailclient","admin",new{id=data.client_id})"><button type="button" class="btn btn-info btn-sm">Detail</button></a>  
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
